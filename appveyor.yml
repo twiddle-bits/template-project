@@ -26,7 +26,7 @@ build_script:
   - dir /s _install
 
 # Send notifications
-notifications:
-  - provider: Email
-  - to:
-    - twiddlebits.ak@gmail.com
+# notifications:
+#   - provider: Email
+#   - to:
+#     - twiddlebits.ak@gmail.com
