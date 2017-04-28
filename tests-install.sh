@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
-exec=`realpath $0`
-root=`dirname $exec`
+cd `dirname $0`
+root=`pwd`
+cd -
 
 set -e
 

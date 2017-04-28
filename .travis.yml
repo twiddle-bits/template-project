@@ -28,6 +28,7 @@ script:
   - cd foo
   - ./build.sh
   - ls -lhR _install/*
+  - ./tests-install.sh
 
 # Send notifications
 notifications:
