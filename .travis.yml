@@ -30,10 +30,10 @@ addons:
 
 # Run the build and the test
 script:
-  - if [[ "`uname`" == "Darwin" ]]; sudo ln -s /usr/bin/realpath `which grealpath`
   - ./clone.sh foo
   - cd foo
   - ./build.sh
+  - ls -lhR _install/*
 
 # Send notifications
 notifications:
