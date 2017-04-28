@@ -31,6 +31,8 @@ addons:
 # Run the build and the test
 script:
   - if [[ "`uname`" == "Darwin" ]]; then travis_retry brew install coreutils; fi
+  - ./clone.sh foo
+  - cd foo
   - ./build.sh
 
 # Send notifications

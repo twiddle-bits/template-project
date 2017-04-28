@@ -15,6 +15,8 @@ clone_folder: c:\projects\%APPVEYOR_PROJECT_NAME%
 
 build_script:
   - cd c:\projects\%APPVEYOR_PROJECT_NAME%
+  - ./clone.sh foo
+  - cd foo
   - mkdir _build && cb _build
   - cmake -G"Visual Studio 15" -DCMAKE_INSTALL_PREFIX=_install ..
   - cmake --build . --config %CMAKE_BUILD_TYPE%
