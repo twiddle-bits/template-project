@@ -20,17 +20,10 @@ env:
     - CMAKE_BUILD_TYPE=Release
     - CMAKE_BUILD_TYPE=MinSizeRel
 
-# Upgrade CMake since Travis CI uses Ubuntu 12.04 with CMake 2.8.7
-addons:
-  apt:
-    sources:
-      - kalakris-cmake
-    packages:
-      - cmake
-
 # Run the build and the test
 script:
-  - sudo apt-get install -y  coreutils
+  - sudo add-apt-repository ppa:george-edison55/precise-backports && sudo apt-get update
+  - sudo apt-get install cmake
   - ./clone.sh foo
   - cd foo
   - ./build.sh
