@@ -22,7 +22,7 @@ build_script:
   - bash -c "./clone.sh foo"
   - cd foo
   - mkdir _build && cd _build
-  - cmake -G"Visual Studio 15" -DCMAKE_INSTALL_PREFIX=_install ..
+  - cmake -DCMAKE_INSTALL_PREFIX=_install ..
   - cmake --build . --config %CMAKE_BUILD_TYPE%
   - cmake --build . --config %CMAKE_BUILD_TYPE% --target tests
   - cmake --build . --config %CMAKE_BUILD_TYPE% --target install
