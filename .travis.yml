@@ -22,8 +22,8 @@ env:
 
 # Run the build and the test
 script:
-  - if [ "`uname`" = "Linux" ]; then sudo add-apt-repository -y ppa:george-edison55/precise-backports && sudo apt-get update; fi
-  - if [ "`uname`" = "Linux" ]; sudo apt-get install cmake; fi
+  - if [[ "`uname`" == "Linux" ]]; then sudo add-apt-repository -y ppa:george-edison55/precise-backports && sudo apt-get update; fi
+  - if [[ "`uname`" == "Linux" ]]; then sudo apt-get install cmake; fi
   - ./clone.sh foo
   - cd foo
   - ./build.sh
