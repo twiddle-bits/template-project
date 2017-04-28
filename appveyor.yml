@@ -1,6 +1,8 @@
 # Versioning
 version: v-{build}
 
+image: Visual Studio 2015
+
 # Configuration
 environment:
   UNUSED: 1
