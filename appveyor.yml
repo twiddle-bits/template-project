@@ -21,11 +21,11 @@ build_script:
   - set "PATH=%PATH:C:\Program Files (x86)\Git\bin=%"
   - bash -c "./clone.sh foo"
   - cd foo
-  - mkdir _build && cd _build
-  - cmake -DCMAKE_INSTALL_PREFIX=_install ..
-  - cmake --build . --config %CMAKE_BUILD_TYPE%
-  - cmake --build . --config %CMAKE_BUILD_TYPE% --target tests
-  - cmake --build . --config %CMAKE_BUILD_TYPE% --target install
+  - mkdir _build
+  - cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
+  - cmake --build _build --config %CMAKE_BUILD_TYPE%
+  - cmake --build _build --config %CMAKE_BUILD_TYPE% --target tests
+  - cmake --build _build --config %CMAKE_BUILD_TYPE% --target install
   - dir /s _install
   - bash -c "./tests-install.sh"
 
