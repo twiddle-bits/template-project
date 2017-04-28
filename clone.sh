@@ -7,7 +7,7 @@ fi
 
 set -e
 
-if [[ "`uname`" == "Darwin" ]]; then
+if [ "`uname`" = "Darwin" ]; then
     fullpath="grealpath"
 else
     fullpath="realpath"

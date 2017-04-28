@@ -27,6 +27,7 @@ addons:
       - kalakris-cmake
     packages:
       - cmake
+      - coreutils
 
 # Run the build and the test
 script:
