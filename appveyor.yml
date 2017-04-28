@@ -28,7 +28,7 @@ build_script:
   - cmake --build _build --config %CMAKE_BUILD_TYPE% --target install
   - dir /s _install
   - cd tests\install
-  - bash -c "test.sh"
+  - bash -c "./test.sh"
 
 # Send notifications
 # notifications:
