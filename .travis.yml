@@ -1,0 +1,38 @@
+# Set the project language
+language: cpp
+
+# Set test platforms
+os:
+  - osx
+  - linux
+
+# Disable use of container-based infrastructure for Linux, because we need to
+# add a non-whitelisted PPA for a newer version of CMake
+sudo: true
+
+# Configuration
+env:
+  global:
+    - UNUSED
+  matrix:
+    - CMAKE_BUILD_TYPE=Debug
+    - CMAKE_BUILD_TYPE=RelWithDebInfo
+    - CMAKE_BUILD_TYPE=Release
+    - CMAKE_BUILD_TYPE=MinSizeRel
+
+# Upgrade CMake since Travis CI uses Ubuntu 12.04 with CMake 2.8.7
+addons:
+  apt:
+    sources:
+      - kalakris-cmake
+    packages:
+      - cmake
+
+# Run the build and the test
+script:
+  - ./build.sh
+
+# Send notifications
+notifications:
+  email:
+    - twiddlebits.ak@gmail.com
