@@ -55,3 +55,7 @@ cat $srcDir/LICENSE | sed "s/<YEAR>/`date +%Y`/g" > $projDir/LICENSE
 
 # copy 3rdparty.cmake
 cp $srcDir/3rdparty.cmake $projDir/
+
+# copy CI files
+cat $srcDir/.travis.yml | grep -v 'foo' > $projDir/.travis.yml
+cat $srcDir/appveyor.yml | grep -v 'foo' > $projDir/appveyor.yml
