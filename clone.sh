@@ -7,12 +7,16 @@ fi
 
 set -e
 
-exe=`realpath $0`
-srcDir=`dirname $exe`
+srcDir=`dirname $0`
 
-projDir=`realpath $1`
+cd $srcDir
+srcDir=`pwd`
+cd -
 
-mkdir -p $projDir
+mkdir -p $1
+cd $1
+projDir=`pwd`
+cd -
 
 projName=`basename $projDir`
 projNameUpper=`echo $projName | tr [a-z] [A-Z]`
@@ -48,3 +52,10 @@ cat $srcDir/tests/install/CMakeLists.txt | sed "s/<PKG>/$projName/g" > $projDir/
 
 # copy LICENSE
 cat $srcDir/LICENSE | sed "s/<YEAR>/`date +%Y`/g" > $projDir/LICENSE
+
+# copy 3rdparty.cmake
+cp $srcDir/3rdparty.cmake $projDir/
+
+# copy CI files
+cat $srcDir/.travis.yml | grep -v 'foo' > $projDir/.travis.yml
+cat $srcDir/appveyor.yml | grep -v 'foo' > $projDir/appveyor.yml

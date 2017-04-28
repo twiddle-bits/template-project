@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
-exec=`realpath $0`
-currdir=`dirname $exec`
+
+cd `dirname $0`
+currdir=`pwd`
+cd -
+
 parent=`dirname $currdir`
 root=`dirname $parent`
 

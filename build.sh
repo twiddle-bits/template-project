@@ -1,7 +1,10 @@
 #!/usr/bin/env sh
 
-exec=`realpath $0`
-root=`dirname $exec`
+root=`dirname $0`
+
+cd $root
+
+root=`pwd`
 
 set -e
 
@@ -16,5 +19,3 @@ fi
 cmake -H$root -B$root/_build -DCMAKE_INSTALL_PREFIX=$root/_install -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS} -Wno-dev
 env VERBOSE=1 cmake --build $root/_build --target tests
 env VERBOSE=1 cmake --build $root/_build --target install
-
-tree -h $root/_install
