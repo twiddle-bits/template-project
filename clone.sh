@@ -7,10 +7,16 @@ fi
 
 set -e
 
-exe=`realpath $0`
+if [[ "`uname`" == "Darwin" ]]; then
+    fullpath="grealpath"
+else
+    fullpath="realpath"
+fi
+
+exe=`$fullpath $0`
 srcDir=`dirname $exe`
 
-projDir=`realpath $1`
+projDir=`$fullpath $1`
 
 mkdir -p $projDir
 
