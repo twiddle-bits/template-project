@@ -22,7 +22,7 @@ env:
 
 # Run the build and the test
 script:
-  - sudo add-apt-repository ppa:george-edison55/precise-backports && sudo apt-get update
+  - if [ "`uname`" = "Linux" ]; then sudo add-apt-repository ppa:george-edison55/precise-backports && sudo apt-get update; fi
   - sudo apt-get install cmake
   - ./clone.sh foo
   - cd foo
