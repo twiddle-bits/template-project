@@ -7,18 +7,16 @@ fi
 
 set -e
 
-if [ "`uname`" = "Darwin" ]; then
-    fullpath="grealpath"
-else
-    fullpath="realpath"
-fi
+srcDir=`dirname $0`
 
-exe=`$fullpath $0`
-srcDir=`dirname $exe`
+cd $srcDir
+srcDir=`pwd`
+cd -
 
-projDir=`$fullpath $1`
-
-mkdir -p $projDir
+mkdir -p $1
+cd $1
+projDir=`pwd`
+cd -
 
 projName=`basename $projDir`
 projNameUpper=`echo $projName | tr [a-z] [A-Z]`
