@@ -25,5 +25,5 @@ build_script:
 # Send notifications
 notifications:
   - provider: Email
-  to:
+  - to:
     - twiddlebits.ak@gmail.com
