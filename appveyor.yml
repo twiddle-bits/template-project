@@ -14,7 +14,7 @@ environment:
 clone_folder: c:\projects\%APPVEYOR_PROJECT_NAME%
 
 build_script:
-  - echo "Building project: %APPVEYOR_PROJECT_NAME%"
+  - echo Building project: %APPVEYOR_PROJECT_NAME%
   - cd c:\projects\%APPVEYOR_PROJECT_NAME%
   - dir .
   - c:\msys64\usr\bin\bash -lc "./clone.sh foo"
