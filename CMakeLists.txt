@@ -121,7 +121,7 @@ include(tests.cmake)
 # Packaging
 
 set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE)
-set(CPACK_PACKAGE_VENDOR "Aaditya Kalsi")
-set(CPACK_PACKAGE_CONTACT "akalsi.dev@gmail.com")
+set(CPACK_PACKAGE_VENDOR "twiddle-bits")
+set(CPACK_PACKAGE_CONTACT "twiddlebits.ak@gmail.com")
 set(CPACK_STRIP_FILES 1)
 include(CPack)
