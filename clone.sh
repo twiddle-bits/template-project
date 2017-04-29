@@ -39,7 +39,7 @@ cp $srcDir/build.sh $srcDir/clean.sh $srcDir/tests-install.sh $projDir
 
 # copy empty.c
 mkdir -p $projDir/src/$projName
-cp $srcDir/src/proj/empty.c $projDir/src/$projName
+cat $srcDir/src/proj/empty.c | sed "s/proj/$projName/g" | sed "s/PROJ/$projNameUpper/g" > $projDir/src/$projName/empty.c
 
 # copy tests
 mkdir -p $projDir/tests/install
